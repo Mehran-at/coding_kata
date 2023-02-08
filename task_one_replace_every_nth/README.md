@@ -1,4 +1,5 @@
 Task
+https://www.codewars.com/kata/57fcaed83206fb15fd00027a/train/java
 Write a method, that replaces every nth char oldValue with char newValue.
 
 Inputs
