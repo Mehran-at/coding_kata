@@ -16,7 +16,8 @@
 	<description>coding_kata_tasks</description>
 	<modules>
 		<module>task_one_replace_every_nth</module>
-	</modules>
+        <module>task_two_gravity_flip</module>
+    </modules>
 	<properties>
 		<java.version>19</java.version>
 	</properties>
