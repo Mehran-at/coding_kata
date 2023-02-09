@@ -12,14 +12,13 @@ class ReplaceCharTest {
     void checkIfMinusNumberReturnOriginalText() {
         String actual = "Vader soid: No, I am your fother!";
         Input input = new Input("Vader said: No, I am your father!");
-        String expected = replaceChar.replace(input, 'a', 'o', 2);
+        String expected = replaceChar.replace(input, 2, 'a', 'o');
         assertEquals(expected, actual);
-        assertEquals("Vader soid: No, I am your fother!", replaceChar.replace(new Input("Vader said: No, I am your father!"),  'a', 'o',2));
-        assertEquals("Vader said: No, I am your fother!", replaceChar.replace(new Input("Vader said: No, I am your father!"), 'a', 'o', 4));
-        assertEquals("Vader said: No, I am your father!", replaceChar.replace(new Input("Vader said: No, I am your father!"), 'a', 'o', 6));
-        assertEquals("Vader said: No, I am your father!", replaceChar.replace(new Input("Vader said: No, I am your father!"), 'a', 'o', 0));
-        assertEquals("Vader said: No, I am your father!", replaceChar.replace(new Input("Vader said: No, I am your father!"), 'a', 'o', -2));
-        assertEquals("Vader sayd: No, I am your father!", replaceChar.replace(new Input("Vader said: No, I am your father!"), 'i', 'y', 1));
+        assertEquals("Vader soid: No, I am your fother!", replaceChar.replace(new Input("Vader said: No, I am your father!"), 2, 'a', 'o'));
+        assertEquals("Vader said: No, I am your fother!", replaceChar.replace(new Input("Vader said: No, I am your father!"), 4, 'a', 'o'));
+        assertEquals("Vader said: No, I am your father!", replaceChar.replace(new Input("Vader said: No, I am your father!"), 6, 'a', 'o'));
+        assertEquals("Vader said: No, I am your father!", replaceChar.replace(new Input("Vader said: No, I am your father!"), 0, 'a', 'o'));
+        assertEquals("Vader said: No, I am your father!", replaceChar.replace(new Input("Vader said: No, I am your father!"), -2, 'a', 'o'));
+        assertEquals("Vader sayd: No, I am your father!", replaceChar.replace(new Input("Vader said: No, I am your father!"), 1, 'i', 'y'));
     }
-
 }

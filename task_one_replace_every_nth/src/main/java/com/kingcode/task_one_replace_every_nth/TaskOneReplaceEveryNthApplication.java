@@ -10,7 +10,6 @@ public class TaskOneReplaceEveryNthApplication {
         SpringApplication.run(TaskOneReplaceEveryNthApplication.class, args);
         ReplaceChar replaceChar = new ReplaceChar();
         Input input = new Input("Vader said: No, I am your father!");
-        System.out.println(replaceChar.replace(input, 'a', 'o', 2));
+        System.out.println(replaceChar.replace(input, 2, 'a', 'o'));
     }
-
 }
