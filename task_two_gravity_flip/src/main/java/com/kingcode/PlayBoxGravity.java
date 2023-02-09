@@ -1,25 +1,30 @@
 package com.kingcode;
 
-import java.util.Arrays;
-
 public class PlayBoxGravity {
 
-    void play(String direction, int[] cubes) {
-//        int numberOfColumns = getNumberOfColumns(new int[]{1, 2});
-        calculateForGravityLeft(cubes);
-        System.out.println(Arrays.toString(cubes));
-
+    int[] flip(char direction, int[] cubes) {
+        if (direction == 'l') {
+            return calculateForGravityLeft(cubes);
+        }
+        if (direction == 'r') {
+            return calculateForGravityRight(cubes);
+        }
+        return null;
     }
 
-    public int[] calculateForGravityLeft(int[] cubes) {
-//        {1, 4, 5, 3, 5}
-//        [5, 5, 4, 3, 1]
+    private int[] calculateForGravityRight(int[] cubes) {
+        return null;
+    }
+
+    private int[] calculateForGravityLeft(int[] cubes) {
         for (int c : cubes) {
             for (int cube = 0; cube < cubes.length - 1; cube++) {
                 int columnRight = cubes[cube + 1];
                 int columnLeft = cubes[cube];
+
                 int leftColumnAfterMove;
                 int rightColumnAfterMove;
+
                 if (columnRight - columnLeft > 0) {
                     leftColumnAfterMove = (columnRight - columnLeft) + columnLeft;
                     rightColumnAfterMove = columnRight - (columnRight - columnLeft);
@@ -28,12 +33,6 @@ public class PlayBoxGravity {
                 }
             }
         }
-
         return cubes;
-
-    }
-
-    public int getNumberOfColumns(int[] cubes) {
-        return cubes.length;
     }
 }
