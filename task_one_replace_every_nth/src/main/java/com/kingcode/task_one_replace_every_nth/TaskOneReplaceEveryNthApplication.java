@@ -11,7 +11,6 @@ public class TaskOneReplaceEveryNthApplication {
         ReplaceChar replaceChar = new ReplaceChar();
         Input input = new Input("Vader said: No, I am your father!");
         System.out.println(replaceChar.replace(input, 'a', 'o', 2));
-
     }
 
 }
