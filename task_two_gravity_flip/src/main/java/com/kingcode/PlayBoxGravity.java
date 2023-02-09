@@ -22,19 +22,16 @@ public class PlayBoxGravity {
                 int columnRight = cubes[cube + 1];
                 int columnLeft = cubes[cube];
 
-                int leftColumnAfterMove;
-                int rightColumnAfterMove;
-
-                if (columnRight - columnLeft > 0) {
-
-                    leftColumnAfterMove = (columnRight - columnLeft) + columnLeft;
-                    rightColumnAfterMove = columnRight - (columnRight - columnLeft);
-
-                    cubes[cube] = leftColumnAfterMove;
-                    cubes[cube + 1] = rightColumnAfterMove;
-                }
+                moveCubesToTheLeftColumn(cubes, cube, columnRight, columnLeft);
             }
         }
         return cubes;
+    }
+
+    private void moveCubesToTheLeftColumn(int[] cubes, int cube, int columnRight, int columnLeft) {
+        if (columnRight - columnLeft > 0) {
+            cubes[cube] = (columnRight - columnLeft) + columnLeft;
+            cubes[cube + 1] = columnRight - (columnRight - columnLeft);
+        }
     }
 }
