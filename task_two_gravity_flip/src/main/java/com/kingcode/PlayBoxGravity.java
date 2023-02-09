@@ -14,8 +14,7 @@ public class PlayBoxGravity {
     public int[] calculateForGravityLeft(int[] cubes) {
 //        {1, 4, 5, 3, 5}
 //        [5, 5, 4, 3, 1]
-        int length = cubes.length;
-        do {
+        for (int c : cubes) {
             for (int cube = 0; cube < cubes.length - 1; cube++) {
                 int columnRight = cubes[cube + 1];
                 int columnLeft = cubes[cube];
@@ -29,7 +28,7 @@ public class PlayBoxGravity {
                 }
             }
         }
-        while (cubes[0] < cubes[1]);
+
         return cubes;
 
     }
