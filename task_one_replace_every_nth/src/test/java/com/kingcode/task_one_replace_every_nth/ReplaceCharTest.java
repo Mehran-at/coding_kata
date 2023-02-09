@@ -10,9 +10,10 @@ class ReplaceCharTest {
 
     @Test
     void checkIfMinusNumberReturnOriginalText() {
+        String actual = "Vader soid: No, I am your fother!";
         Input input = new Input("Vader said: No, I am your father!");
         String expected = replaceChar.replace(input, 'a', 'o', 2);
-        assertEquals(input.getText(), expected);
+        assertEquals(expected, actual);
     }
 
 }
