@@ -52,4 +52,15 @@ public class PlayBoxGravity {
                 .mapToInt(Integer::intValue)
                 .toArray();
     }
+
+    public static int[] flip2(char dir, int[] arr) {
+        return dir == 'R' ?
+                Arrays.stream(arr).sorted().toArray()
+                :
+                Arrays.stream(arr)
+                .boxed()
+                .sorted(Comparator.reverseOrder())
+                .mapToInt(x -> x)
+                .toArray();
+    }
 }
