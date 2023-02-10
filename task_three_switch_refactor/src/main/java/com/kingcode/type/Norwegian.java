@@ -7,6 +7,7 @@ public class Norwegian implements Parrot {
     public static final double BASE_SPEED = 12.0;
     public static final double MAX_NUM = 24.0;
     public static final int MIN_VALUE = 0;
+
     private final double voltage;
     private final boolean isNailed;
 
