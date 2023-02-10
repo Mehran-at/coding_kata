@@ -6,15 +6,23 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PlayBoxGravityTest {
 
     @Test
     void testGravityToLeft() {
         PlayBoxGravity playBoxGravity = new PlayBoxGravity();
-        int[] expected = playBoxGravity.flip(new Direction('l'), new Cube(new int[]{1, 4, 5, 3, 5 }));
+        int[] expected = playBoxGravity.flip(new Direction('l'), new Cube(new int[]{1, 4, 5, 3, 5}));
         int[] actual = {5, 5, 4, 3, 1};
+        assertEquals(Arrays.toString(actual), Arrays.toString(expected));
+    }
+
+    @Test
+    void testGravityToLeftWithEqualNumbers() {
+        PlayBoxGravity playBoxGravity = new PlayBoxGravity();
+        int[] expected = playBoxGravity.flip(new Direction('l'), new Cube(new int[]{5, 5}));
+        int[] actual = {5, 5};
         assertEquals(Arrays.toString(actual), Arrays.toString(expected));
     }
 
@@ -23,6 +31,14 @@ class PlayBoxGravityTest {
         PlayBoxGravity playBoxGravity = new PlayBoxGravity();
         int[] expected = playBoxGravity.flip(new Direction('r'), new Cube(new int[]{3, 2, 1, 2}));
         int[] actual = {1, 2, 2, 3};
+        assertEquals(Arrays.toString(actual), Arrays.toString(expected));
+    }
+
+    @Test
+    void testGravityToRightWithEqualNumbers() {
+        PlayBoxGravity playBoxGravity = new PlayBoxGravity();
+        int[] expected = playBoxGravity.flip(new Direction('r'), new Cube(new int[]{3, 3}));
+        int[] actual = {3, 3};
         assertEquals(Arrays.toString(actual), Arrays.toString(expected));
     }
 }
