@@ -19,7 +19,6 @@ public class ParrotImpl implements Parrot {
 
     public double getSpeed() {
         return switch (type) {
-            case AFRICAN -> Math.max(MAX_NUM, BASE_SPEED - LOAD_FACTOR * numberOfCoconuts);
             case NORWEGIAN_BLUE -> (isNailed) ? 0 : getBaseSpeed(voltage);
             default -> throw new IllegalStateException("Unexpected value: " + type);
         };
