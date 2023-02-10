@@ -3,6 +3,8 @@ package com.kingcode;
 public class ParrotImpl implements Parrot {
 
     public static final double BASE_SPEED = 12.0;
+    public static final int MAX_NUM = 0;
+    public static final double LOAD_FACTOR = 9.0;
     private final ParrotTypeEnum type;
     private final int numberOfCoconuts;
     private final double voltage;
@@ -17,7 +19,7 @@ public class ParrotImpl implements Parrot {
 
     public double getSpeed() {
         return switch (type) {
-            case AFRICAN -> Math.max(0, BASE_SPEED - getLoadFactor() * numberOfCoconuts);
+            case AFRICAN -> Math.max(MAX_NUM, BASE_SPEED - LOAD_FACTOR * numberOfCoconuts);
             case NORWEGIAN_BLUE -> (isNailed) ? 0 : getBaseSpeed(voltage);
             default -> throw new IllegalStateException("Unexpected value: " + type);
         };
@@ -25,10 +27,6 @@ public class ParrotImpl implements Parrot {
 
     private double getBaseSpeed(double voltage) {
         return Math.min(24.0, voltage * BASE_SPEED);
-    }
-
-    private double getLoadFactor() {
-        return 9.0;
     }
 
 }

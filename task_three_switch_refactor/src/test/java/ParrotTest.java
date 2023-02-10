@@ -1,7 +1,4 @@
-import com.kingcode.European;
-import com.kingcode.Parrot;
-import com.kingcode.ParrotImpl;
-import com.kingcode.ParrotTypeEnum;
+import com.kingcode.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,7 +13,7 @@ public class ParrotTest {
 
     @Test
     public void getSpeedOfAfricanParrot_With_One_Coconut() {
-        ParrotImpl parrot = new ParrotImpl(ParrotTypeEnum.AFRICAN, 1, 0, false);
+        Parrot parrot = new African(1);
         assertEquals(3.0, parrot.getSpeed(), 0.0);
     }
 
