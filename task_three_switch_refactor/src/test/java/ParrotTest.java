@@ -43,7 +43,7 @@ public class ParrotTest {
 
     @Test
     public void getSpeedNorwegianBlueParrot_not_nailed_high_voltage() {
-        Norwegian parrot = new Norwegian(4, false);
+        Parrot parrot = new Norwegian(4, false);
         assertEquals(24.0, parrot.getSpeed(), 0.0);
     }
 }
