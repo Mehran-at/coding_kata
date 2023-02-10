@@ -1,4 +1,4 @@
-import com.kingcode.*;
+import com.kingcode.Parrot;
 import com.kingcode.type.African;
 import com.kingcode.type.European;
 import com.kingcode.type.Norwegian;
