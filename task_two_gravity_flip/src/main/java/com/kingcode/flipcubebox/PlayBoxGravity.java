@@ -12,6 +12,10 @@ import java.util.Comparator;
 
 public class PlayBoxGravity {
 
+    private static int applyAsInt(Integer x) {
+        return x;
+    }
+
     public int[] flip(Direction direction1, Cube cube) {
         GravityToLeft gravityToLeft = new GravityToLeft();
         GravityToRight gravityToRight = new GravityToRight();
@@ -53,7 +57,7 @@ public class PlayBoxGravity {
                 .toArray();
     }
 
-    public static int[] flip2(char dir, int[] arr) {
+    public static int[] flipWithStreamAndConditionAndComparatorReversedOrder(char dir, int[] arr) {
         return dir == 'R' ?
                 Arrays.stream(arr).sorted().toArray()
                 :
@@ -61,6 +65,14 @@ public class PlayBoxGravity {
                 .boxed()
                 .sorted(Comparator.reverseOrder())
                 .mapToInt(x -> x)
+                .toArray();
+    }
+
+    public static int[] flipWithStreamAndConditionAndComparatorReversedOrderMostOptimized(char dir, int[] arr) {
+        return Arrays.stream(arr)
+                .boxed()
+                .sorted(dir == 'L' ? (a, b) -> b - a : Comparator.reverseOrder())
+                .mapToInt(PlayBoxGravity::applyAsInt)
                 .toArray();
     }
 }

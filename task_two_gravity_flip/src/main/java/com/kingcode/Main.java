@@ -19,5 +19,7 @@ public class Main {
         System.out.println(Arrays.toString(playBoxGravity.flipWithStreamAndCondition('L', new int[]{1, 4, 5, 3, 5})));
         System.out.println("------------------");
         System.out.println(Arrays.toString(playBoxGravity.flipWithStreamAndConditionAndComparator('L', new int[]{1, 4, 5, 3, 5})));
+        System.out.println("------------------>");
+        System.out.println(Arrays.toString(PlayBoxGravity.flipWithStreamAndConditionAndComparatorReversedOrderMostOptimized('L', new int[]{3, 2, 1, 2})));
     }
 }
