@@ -1,4 +1,7 @@
 import com.kingcode.*;
+import com.kingcode.type.African;
+import com.kingcode.type.European;
+import com.kingcode.type.Norwegian;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

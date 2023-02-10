@@ -1,4 +1,6 @@
-package com.kingcode;
+package com.kingcode.type;
+
+import com.kingcode.Parrot;
 
 public class Norwegian implements Parrot {
 

@@ -1,6 +1,6 @@
 package sourcecodewithoutrefactor;
 
-import com.kingcode.Norwegian;
+import com.kingcode.type.Norwegian;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

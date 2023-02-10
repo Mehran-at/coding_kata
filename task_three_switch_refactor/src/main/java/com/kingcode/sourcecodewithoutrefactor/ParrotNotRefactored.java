@@ -1,15 +1,13 @@
 package com.kingcode.sourcecodewithoutrefactor;
 
-import com.kingcode.ParrotTypeEnum;
-
 public class ParrotNotRefactored {
 
-    private final ParrotTypeEnum type;
+    private final ParrotTypeEnumNotRefactored type;
     private final int numberOfCoconuts;
     private final double voltage;
     private final boolean isNailed;
 
-    public ParrotNotRefactored(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
+    public ParrotNotRefactored(ParrotTypeEnumNotRefactored type, int numberOfCoconuts, double voltage, boolean isNailed) {
         this.type = type;
         this.numberOfCoconuts = numberOfCoconuts;
         this.voltage = voltage;
