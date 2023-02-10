@@ -8,7 +8,6 @@ import com.kingcode.gravitylogic.GravityToRight;
 
 public class PlayBoxGravity {
 
-
     public int[] flip(Direction direction1, Cube cube) {
         GravityToLeft gravityToLeft = new GravityToLeft();
         GravityToRight gravityToRight = new GravityToRight();
