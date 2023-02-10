@@ -17,4 +17,12 @@ class PlayBoxGravityTest {
         int[] actual = {5, 5, 4, 3, 1};
         assertEquals(Arrays.toString(actual), Arrays.toString(expected));
     }
+
+    @Test
+    void testGravityToRight() {
+        PlayBoxGravity playBoxGravity = new PlayBoxGravity();
+        int[] expected = playBoxGravity.flip(new Direction('r'), new Cube(new int[]{3, 2, 1, 2}));
+        int[] actual = {1, 2, 2, 3};
+        assertEquals(Arrays.toString(actual), Arrays.toString(expected));
+    }
 }
