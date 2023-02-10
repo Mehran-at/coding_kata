@@ -1,4 +1,4 @@
-package com.kingcode;
+package com.kingcode.flipcubebox;
 
 
 import com.kingcode.gamecomponents.Cube;
@@ -17,6 +17,6 @@ public class PlayBoxGravity {
         if (direction1.direction() == 'r') {
             return gravityToRight.calculateForGravityRight(cube.cubes());
         }
-        return null;
+        return new int[0];
     }
 }
