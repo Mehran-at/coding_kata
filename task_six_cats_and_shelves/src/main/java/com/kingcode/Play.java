@@ -11,6 +11,7 @@ public class Play {
             System.out.println("Finish = " + finish + " must be bigger than start = " + start);
             return -1;
         }
+
         int jump = 1;
         if (start + jump == finish) {
             return jump;
@@ -18,17 +19,14 @@ public class Play {
             return jump;
         }
         jump++;
-        if (jump + 1 == finish) {
-            return jump;
-        } else if (jump + 3 == finish) {
-            return jump;
-        }
-        jump++;
-        if (jump + 1 == finish) {
-            return jump;
-        } else if (jump + 3 == finish) {
-            return jump;
-        }
-        return -6;
+        do {
+            if (jump + 1 == finish) {
+                return jump;
+            } else if (jump + 3 == finish) {
+                return jump;
+            }
+            jump++;
+        } while (jump + 1 == finish || jump + 3 == finish);
+        return jump;
     }
 }
