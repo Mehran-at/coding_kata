@@ -12,10 +12,23 @@ public class Play {
             return -1;
         }
         int jump = 1;
-        if (start + jump == finish) return jump;
+        if (start + jump == finish) {
+            return jump;
+        } else if (jump + 3 == finish) {
+            return jump;
+        }
         jump++;
-        if (jump + 1 == finish || jump + 3 == finish) return jump;
+        if (jump + 1 == finish) {
+            return jump;
+        } else if (jump + 3 == finish) {
+            return jump;
+        }
         jump++;
+        if (jump + 1 == finish) {
+            return jump;
+        } else if (jump + 3 == finish) {
+            return jump;
+        }
         return jump;
     }
 }
