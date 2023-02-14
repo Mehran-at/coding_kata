@@ -4,13 +4,8 @@ public class Play {
 
     public static int solution(int start, int finish) {
         // 1 -> 2 -> 3 -> 4 -> 5
-        if (start < 0 || finish <= 1) {
-            System.out.println(start + " or start has to be a positive number & " + finish + " or finish must be more that 1");
-            return -1;
-        } else if (finish < start) {
-            System.out.println("Finish = " + finish + " must be bigger than start = " + start);
-            return -1;
-        }
+        Integer x = checkCornerCases(start, finish);
+        if (x != 1000) return x;
 
         int jump = 1;
         if (start + jump == finish) {
@@ -26,7 +21,13 @@ public class Play {
                 return jump;
             }
             jump++;
-        } while (jump + 1 == finish || jump + 3 == finish);
+        } while (jump <= finish);
         return jump;
+    }
+
+    private static Integer checkCornerCases(int start, int finish) {
+        if (start < 0 || finish <= 1 || finish < start) {
+            return -1;
+        } return 1000;
     }
 }
