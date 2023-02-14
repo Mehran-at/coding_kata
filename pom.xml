@@ -21,6 +21,7 @@
         <module>task_four_bowling_game</module>
         <module>task_five_DNA_to_RNA_conversion</module>
         <module>task_six_cats_and_shelves</module>
+        <module>task_seven_simple_string_characters</module>
     </modules>
 	<properties>
 		<java.version>19</java.version>
