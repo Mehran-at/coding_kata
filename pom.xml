@@ -20,6 +20,7 @@
         <module>task_three_switch_refactor</module>
         <module>task_four_bowling_game</module>
         <module>task_five_DNA_to_RNA_conversion</module>
+        <module>task_six_cats_and_shelves</module>
     </modules>
 	<properties>
 		<java.version>19</java.version>
