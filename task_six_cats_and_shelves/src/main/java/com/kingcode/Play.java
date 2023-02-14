@@ -13,14 +13,3 @@ public class Play {
         return jump;
     }
 }
-
-//    int jump = start;
-//        for (jump = start; jump < finish;) {
-//        if (jump + 1 == finish) return jump;
-//        jump++;
-//        if (jump + 1 == finish) return jump;
-//        jump++;
-//        if (jump + 1 == finish) return jump;
-//        jump++;
-//
-//        }
