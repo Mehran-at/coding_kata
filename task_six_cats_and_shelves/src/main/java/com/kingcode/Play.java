@@ -6,7 +6,6 @@ public class Play {
         // 1 -> 2 -> 3 -> 4 -> 5
         Integer x = checkCornerCases(start, finish);
         if (x != 1000) return x;
-
         int jump = 1;
         if (start + jump == finish) {
             return jump;
@@ -28,6 +27,7 @@ public class Play {
     private static Integer checkCornerCases(int start, int finish) {
         if (start < 0 || finish <= 1 || finish < start) {
             return -1;
-        } return 1000;
+        }
+        return 1000;
     }
 }
