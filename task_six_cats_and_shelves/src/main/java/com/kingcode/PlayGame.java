@@ -4,14 +4,11 @@ public class PlayGame {
 
     public int solution(int start, int finish) {
         if (isaValidInput(start, finish)) return -1;
-        return getDivision(start, finish) + getModular(start, finish);
-    }
-    private int getModular(int start, int finish) {
-        return (finish - start) % 3;
+        return calculate(start, finish) / 3 + calculate(start, finish) % 3;
     }
 
-    private int getDivision(int start, int finish) {
-        return (finish - start) / 3;
+    private int calculate(int start, int finish) {
+        return finish - start;
     }
 
     private boolean isaValidInput(int start, int finish) {
