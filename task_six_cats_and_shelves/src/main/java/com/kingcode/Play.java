@@ -29,6 +29,6 @@ public class Play {
         } else if (jump + 3 == finish) {
             return jump;
         }
-        return jump;
+        return -6;
     }
 }
