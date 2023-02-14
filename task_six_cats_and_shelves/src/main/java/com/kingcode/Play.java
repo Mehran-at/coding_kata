@@ -6,9 +6,9 @@ public class Play {
         // 1 -> 2 -> 3 -> 4 -> 5
         int jump = 1;
         if (start + jump == finish) return jump;
-        jump = 2;
+        jump++;
         if (jump + 1 == finish || jump + 3 == finish) return jump;
-        jump = 3;
+        jump++;
         if (jump + 3 + 1 == finish) return jump;
         return jump;
     }
