@@ -17,5 +17,6 @@ class PlayTest {
         assertEquals(1, Play.solution(1, 2));
         assertEquals(-1, Play.solution(-1, 2));
         assertEquals(-1, Play.solution(-1, 1));
+        assertEquals(-1, Play.solution(4, 3));
     }
 }
