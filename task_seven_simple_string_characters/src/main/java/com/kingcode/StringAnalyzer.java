@@ -11,11 +11,10 @@ public class StringAnalyzer {
         var spacialCharacterCount = 0;
 
         for (int letter = 0; letter < word.length(); letter++) {
-            Character element = word.charAt(letter);
-            if (isUppercase(element)) uppercaseCount++;
-            if (isLowercase(element)) lowercaseCount++;
-            if (isSpacialCharacter(element)) spacialCharacterCount++;
-            if (isNumber(element)) numberCount++;
+            if (isUppercase(getLetter(word, letter))) uppercaseCount++;
+            if (isLowercase(getLetter(word, letter))) lowercaseCount++;
+            if (isSpacialCharacter(getLetter(word, letter))) spacialCharacterCount++;
+            if (isNumber(getLetter(word, letter))) numberCount++;
         }
 
         output[0] = uppercaseCount;
@@ -25,6 +24,10 @@ public class StringAnalyzer {
 
         return output;
 
+    }
+
+    private static char getLetter(String word, int letter) {
+        return word.charAt(letter);
     }
 
     private static boolean isUppercase(Character letter) {
