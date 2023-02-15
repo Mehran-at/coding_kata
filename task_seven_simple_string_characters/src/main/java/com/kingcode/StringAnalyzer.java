@@ -15,7 +15,7 @@ public class StringAnalyzer {
             if (isSpacialCharacter(getLetter(word, letter))) spacialCharacterCount++;
             if (isNumber(getLetter(word, letter))) numberCount++;
         }
-        return new int[]{uppercaseCount, lowercaseCount, numberCount, spacialCharacterCount,};
+        return new int[]{uppercaseCount, lowercaseCount, numberCount, spacialCharacterCount};
     }
 
     private static char getLetter(String word, int letter) {
