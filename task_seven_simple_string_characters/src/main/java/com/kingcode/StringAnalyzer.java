@@ -16,14 +16,7 @@ public class StringAnalyzer {
             if (isSpacialCharacter(getLetter(word, letter))) spacialCharacterCount++;
             if (isNumber(getLetter(word, letter))) numberCount++;
         }
-
-        output[0] = uppercaseCount;
-        output[1] = lowercaseCount;
-        output[2] = numberCount;
-        output[3] = spacialCharacterCount;
-
-        return output;
-
+        return new int[]{uppercaseCount, lowercaseCount, numberCount, spacialCharacterCount,};
     }
 
     private static char getLetter(String word, int letter) {
@@ -45,4 +38,15 @@ public class StringAnalyzer {
     private static boolean isSpacialCharacter(Character letter) {
         return !isUppercase(letter) && !isLowercase(letter) && !isNumber(letter);
     }
+
+
+    //    -------------------------OTHER-SOLUTIONS--------------------------
+//    public static int[] Solve(String word) {
+//        return new int[]{
+//                word.replaceAll("[^A-Z]", "").length(),
+//                word.replaceAll("[^a-z]", "").length(),
+//                word.replaceAll("[^0-9]", "").length(),
+//                word.replaceAll("[\\w]", "").length()
+//        };
+//    }
 }
