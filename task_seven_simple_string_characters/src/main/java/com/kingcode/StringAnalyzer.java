@@ -40,6 +40,6 @@ public class StringAnalyzer {
     }
 
     private static boolean isSpacialCharacter(Character letter) {
-        return isUppercase(letter) == false && isLowercase(letter) == false && isNumber(letter) == false;
+        return !isUppercase(letter) && !isLowercase(letter) && !isNumber(letter);
     }
 }
