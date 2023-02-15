@@ -2,41 +2,41 @@ package com.kingcode;
 
 public class StringAnalyzer {
 
-    public static int[] Solve(String word) {
+//    public static int[] Solve(String word) {
+//
+//        var uppercaseCount = 0;
+//        var lowercaseCount = 0;
+//        var numberCount = 0;
+//        var spacialCharacterCount = 0;
+//
+//        for (int letter = 0; letter < word.length(); letter++) {
+//            if (isUppercase(getLetter(word, letter))) uppercaseCount++;
+//            if (isLowercase(getLetter(word, letter))) lowercaseCount++;
+//            if (isSpacialCharacter(getLetter(word, letter))) spacialCharacterCount++;
+//            if (isNumber(getLetter(word, letter))) numberCount++;
+//        }
+//        return new int[]{uppercaseCount, lowercaseCount, numberCount, spacialCharacterCount};
+//    }
 
-        var uppercaseCount = 0;
-        var lowercaseCount = 0;
-        var numberCount = 0;
-        var spacialCharacterCount = 0;
-
-        for (int letter = 0; letter < word.length(); letter++) {
-            if (isUppercase(getLetter(word, letter))) uppercaseCount++;
-            if (isLowercase(getLetter(word, letter))) lowercaseCount++;
-            if (isSpacialCharacter(getLetter(word, letter))) spacialCharacterCount++;
-            if (isNumber(getLetter(word, letter))) numberCount++;
-        }
-        return new int[]{uppercaseCount, lowercaseCount, numberCount, spacialCharacterCount};
-    }
-
-    private static char getLetter(String word, int letter) {
-        return word.charAt(letter);
-    }
-
-    private static boolean isUppercase(Character letter) {
-        return Character.isUpperCase(letter);
-    }
-
-    private static boolean isLowercase(Character letter) {
-        return Character.isLowerCase(letter);
-    }
-
-    private static boolean isNumber(Character element) {
-        return Character.isDigit(element);
-    }
-
-    private static boolean isSpacialCharacter(Character letter) {
-        return !isUppercase(letter) && !isLowercase(letter) && !isNumber(letter);
-    }
+//    private static char getLetter(String word, int letter) {
+//        return word.charAt(letter);
+//    }
+//
+//    private static boolean isUppercase(Character letter) {
+//        return Character.isUpperCase(letter);
+//    }
+//
+//    private static boolean isLowercase(Character letter) {
+//        return Character.isLowerCase(letter);
+//    }
+//
+//    private static boolean isNumber(Character element) {
+//        return Character.isDigit(element);
+//    }
+//
+//    private static boolean isSpacialCharacter(Character letter) {
+//        return !isUppercase(letter) && !isLowercase(letter) && !isNumber(letter);
+//    }
 
 
     //    -------------------------OTHER-SOLUTIONS--------------------------
@@ -48,4 +48,21 @@ public class StringAnalyzer {
 //                word.replaceAll("[\\w]", "").length()
 //        };
 //    }
+
+//    public static int[] Solve(String word) {
+//        int uppercaseCount = (int) word.chars().filter(Character::isUpperCase).count();
+//        int lowercaseCount = (int) word.chars().filter(Character::isLowerCase).count();
+//        int digitCount = (int) word.chars().filter(Character::isDigit).count();
+//        int spacialCharCount = word.length() - (uppercaseCount + lowercaseCount + digitCount);
+//        return new int[] {uppercaseCount, lowercaseCount, digitCount, spacialCharCount};
+//    }
+
+    public static int[] Solve(String word) {
+        return new int[] {
+                (int) word.chars().filter(Character::isUpperCase).count(),
+                (int) word.chars().filter(Character::isLowerCase).count(),
+                (int) word.chars().filter(Character::isDigit).count(),
+                (int) word.chars().filter( i -> !Character.isLetter(i) && !Character.isDigit(i)).count()
+        };
+    }
 }
