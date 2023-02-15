@@ -3,7 +3,6 @@ package com.kingcode;
 public class StringAnalyzer {
 
     public static int[] Solve(String word) {
-        int[] output = new int[4];
 
         var uppercaseCount = 0;
         var lowercaseCount = 0;
