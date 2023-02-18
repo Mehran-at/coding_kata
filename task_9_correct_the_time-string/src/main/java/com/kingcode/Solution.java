@@ -3,8 +3,8 @@ package com.kingcode;
 public class Solution {
 
     public static String timeCorrect(String timestring) {
-
         if (checkForInvalidFormat(timestring) == null) return null;
+
         int hour = getIntValuesHour(timestring);
         int minute = getIntValuesMinute(timestring);
         int second = getIntValuesSecond(timestring);
@@ -12,6 +12,10 @@ public class Solution {
         if (hour != 23 && second > 60) {
             second -= 60;
             minute += 1;
+            if (minute > 60) {
+                minute -= 60;
+                hour += 1;
+            }
         }
 
         if (hour != 23 && minute > 60) {
