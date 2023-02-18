@@ -9,8 +9,50 @@ public class Solution {
         int minute = getIntValuesMinute(timestring);
         int second = getIntValuesSecond(timestring);
 
+        if (hour != 23 && second > 60) {
+            second -= 60;
+            minute += 1;
+        }
 
-        return hour + ":" + minute + ":" + second;
+        if (hour != 23 && minute > 60) {
+            minute -= 60;
+            hour += 1;
+        }
+
+        if (hour > 23 && minute < 60 && second < 60) hour = hour % 24;
+
+        if (hour > 23 && second >= 60) {
+            second -= 60;
+            minute += 1;
+            if (minute >= 60) {
+                minute -= 60;
+                hour += 1;
+                if (hour > 23) hour = hour % 24;
+            }
+        }
+
+        if (hour > 23 && minute >= 60) {
+            minute -= 60;
+            hour += 1;
+            if (hour > 23) hour = hour % 24;
+        }
+
+        if (hour == 23 && second >= 60) {
+            second -= 60;
+            minute += 1;
+            if (minute >= 60) {
+                minute -= 60;
+                hour = 0;
+            }
+        }
+
+        if (hour % 24 == 0 && minute >= 60) {
+            minute -= 60;
+            hour += 1;
+        }
+
+
+        return formatOutput(hour) + ":" + formatOutput(minute) + ":" + formatOutput(second);
     }
 
     private static int getIntValuesHour(String timestring) {
@@ -33,5 +75,10 @@ public class Solution {
         if (!Character.isDigit(timestring.charAt(3)) || !Character.isDigit(timestring.charAt(4))) return null;
         if (!Character.isDigit(timestring.charAt(6)) || !Character.isDigit(timestring.charAt(7))) return null;
         return timestring;
+    }
+
+    private static String formatOutput(int num) {
+        if (num < 10) return "0" + num;
+        return num + "";
     }
 }
