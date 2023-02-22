@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class CharactersCount {
 
-    public static List<Map<Character, Integer>> orderedCountt(String text) {
+    public static List<Map<Character, Integer>> orderedCount1(String text) {
         List<Map<Character, Integer>> pairList = new ArrayList<>();
         Map<Character, Integer> list = new HashMap<>();
         int index;
@@ -21,7 +21,7 @@ public class CharactersCount {
         return pairList;
     }
 
-    public static List<Pair<Character, Integer>> orderedCount(String text) {
+    public static List<Pair<Character, Integer>> orderedCount2(String text) {
         return Arrays.stream(text.split(""))
                 .map(s -> s.charAt(0))
                 .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
@@ -31,18 +31,18 @@ public class CharactersCount {
                 .toList();
     }
 
-    public static List<Map<Character, Integer>> orderedCounttt(String text) {
+    public static List<Pair<Character, Integer>> orderedCount3(String text) {
         return text
                 .chars()
                 .boxed()
                 .collect(Collectors.toMap(i -> (char) i.intValue(), i -> 1, Integer::sum, LinkedHashMap::new))
                 .entrySet()
                 .stream()
-                .map(entry -> Map.of(entry.getKey(), entry.getValue()))
+                .map(entry -> Pair.of(entry.getKey(), entry.getValue()))
                 .collect(Collectors.toList());
     }
 
-    public static List<Map.Entry<Character, Integer>> orderedCountttttttt(String input) {
+    public static List<Map.Entry<Character, Integer>> orderedCount4(String input) {
         Map<Character, Integer> count = new HashMap<>();
         Set<Character> sets = new LinkedHashSet<>();
         for (int i = 0; i < input.length(); i++) {
