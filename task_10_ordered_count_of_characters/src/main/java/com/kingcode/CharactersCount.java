@@ -8,7 +8,6 @@ public class CharactersCount {
 
     public static List<Map<Character, Integer>> orderedCountt(String text) {
         List<Map<Character, Integer>> pairList = new ArrayList<>();
-        //  abaac
         Map<Character, Integer> list = new HashMap<>();
         int index;
         for (index = 0; index < text.length(); index++) {
