@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.kingcode</groupId>
-    <artifactId>task_five_DNA_to_RNA_conversion</artifactId>
+    <artifactId>task_5_DNA_to_RNA_conversion</artifactId>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
