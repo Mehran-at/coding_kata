@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>task_four_bowling_game</artifactId>
+    <artifactId>task_4_bowling_game</artifactId>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
