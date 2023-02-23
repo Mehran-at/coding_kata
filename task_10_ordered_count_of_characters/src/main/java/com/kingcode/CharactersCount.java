@@ -5,18 +5,21 @@ import org.apache.commons.lang3.tuple.Pair;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class CharactersCount {
 
-    public static List<Pair<Character, Integer>> orderedCount1 (String text) {
+    public static List<Pair<Character, Integer>> orderedCount1(String text) {
         Set<Pair<Character, Integer>> pairSet = new HashSet<>();
-        for (int index = 0; index < text.length(); index++) {
-            int charIndex = index;
-            int count = (int) text.chars().filter(ch -> ch == text.charAt(charIndex)).count();
-            pairSet.add(Pair.of(text.charAt(index), count));
-        }
+        IntStream.range(0, text.length())
+                .forEach(index ->
+                        pairSet.add(Pair.of(
+                                text.charAt(index),
+                                (int) text.chars().filter(ch -> ch == text.charAt(index)).count()))
+                );
         return pairSet.stream().toList();
     }
+
     public static List<Pair<Character, Integer>> orderedCount2(String text) {
         return Arrays.stream(text.split(""))
                 .map(s -> s.charAt(0))
