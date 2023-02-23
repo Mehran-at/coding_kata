@@ -63,5 +63,4 @@ public class CharactersCount {
         }
         return result;
     }
-
 }
