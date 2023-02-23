@@ -15,7 +15,7 @@
 	<name>coding_kata</name>
 	<description>coding_kata_tasks</description>
 	<modules>
-		<module>task_one_replace_every_nth</module>
+		<module>task_1_replace_every_nth</module>
         <module>task_two_gravity_flip</module>
         <module>task_three_switch_refactor</module>
         <module>task_four_bowling_game</module>

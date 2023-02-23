@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.king-code</groupId>
-	<artifactId>task_one_replace_every_nth</artifactId>
+	<artifactId>task_1_replace_every_nth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>task_one_replace_every_nth</name>
