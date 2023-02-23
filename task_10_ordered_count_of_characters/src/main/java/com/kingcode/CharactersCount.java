@@ -8,28 +8,35 @@ import java.util.stream.Collectors;
 
 public class CharactersCount {
 
-    public static List<Map<Character, Integer>> orderedCount1(String text) {
-        List<Map<Character, Integer>> pairList = new ArrayList<>();
-        Map<Character, Integer> list = new HashMap<>();
-        int index;
-        for (index = 0; index < text.length(); index++) {
+    public static List<Pair<Character, Integer>> orderedCount1 (String text) {
+        Set<Pair<Character, Integer>> pairSet = new HashSet<>();
+        for (int index = 0; index < text.length(); index++) {
             int charIndex = index;
             int count = (int) text.chars().filter(ch -> ch == text.charAt(charIndex)).count();
-            list.put(text.charAt(index), count);
+            pairSet.add(Pair.of(text.charAt(index), count));
         }
-        pairList.add(list);
-        return pairList;
+        return pairSet.stream().toList();
     }
-
     public static List<Pair<Character, Integer>> orderedCount2(String text) {
         return Arrays.stream(text.split(""))
                 .map(s -> s.charAt(0))
                 .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
                 .entrySet()
                 .stream()
-                .map(v -> Pair.of(v.getKey(), v.getValue().intValue()))
+                .map(entry -> Pair.of(entry.getKey(), entry.getValue().intValue()))
                 .toList();
     }
+//    public static List<Pair<Character, Integer>> orderedCount2(String text) {
+//        List<Pair<Character, Integer>> list = new ArrayList<>();
+//        for (Map.Entry<Character, Long> entry : Arrays.stream(text.split(""))
+//                .map(s -> s.charAt(0))
+//                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+//                .entrySet()) {
+//            Pair<Character, Integer> of = Pair.of(entry.getKey(), entry.getValue().intValue());
+//            list.add(of);
+//        }
+//        return list;
+//    }
 
     public static List<Pair<Character, Integer>> orderedCount3(String text) {
         return text
