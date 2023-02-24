@@ -25,6 +25,7 @@
         <module>task_9_correct_the_time-string</module>
         <module>task_10_ordered_count_of_characters</module>
 		<module>task_11_first_non_repeated_character</module>
+		<module>task_12_greatest_common_divisor</module>
 	</modules>
 	<properties>
 		<java.version>19</java.version>
