@@ -1,12 +1,22 @@
 package com.kingcode;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class GreatestCommonDivisor {
     public static int compute(int x, int y) {
-        ArrayList<Integer> divisors = getDivisors(x);
-
-        return 3333;
+        ArrayList<Integer> divisorsX = getDivisors(x);
+        ArrayList<Integer> divisorsY = getDivisors(y);
+        Integer largestDivisableNumForBothNumbers = 0;
+        for (int i = 0; i < divisorsX.size(); i++) {
+            for (int j = 0; j < divisorsY.size(); j++) {
+                if(Objects.equals(divisorsX.get(i), divisorsY.get(j))) {
+                    largestDivisableNumForBothNumbers = divisorsX.get(i);
+                }
+            }
+        }
+        System.out.println(largestDivisableNumForBothNumbers);
+        return largestDivisableNumForBothNumbers;
     }
 
     public static ArrayList<Integer> getDivisors(int num) {
@@ -16,7 +26,6 @@ public class GreatestCommonDivisor {
                 integers.add(i);
             }
         }
-        System.out.println(integers);
         return integers;
     }
 }
