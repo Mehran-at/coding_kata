@@ -41,6 +41,7 @@ class FirstNonRepeatedTest {
     public void test5() {
         final String input = "aabbcc";
         final Character output = FirstNonRepeated.findFirstNonRepeated(input);
-        assertNull(output);
+        final Character expected = 0;
+        assertEquals(expected,output);
     }
 }
