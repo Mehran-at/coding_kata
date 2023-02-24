@@ -24,7 +24,8 @@
         <module>task_seven_simple_string_characters</module>
         <module>task_9_correct_the_time-string</module>
         <module>task_10_ordered_count_of_characters</module>
-    </modules>
+		<module>task_11_first_non_repeated_character</module>
+	</modules>
 	<properties>
 		<java.version>19</java.version>
 	</properties>
