@@ -2,6 +2,8 @@ package com.kingcode;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class GreatestCommonDivisor {
 
@@ -20,13 +22,7 @@ public class GreatestCommonDivisor {
         return largestDivisableNumForBothNumbers;
     }
 
-    public static ArrayList<Integer> getDivisors(int num) {
-        ArrayList<Integer> integers = new ArrayList<>();
-        for (int i = 1; i <= num; i++) {
-            if (num % i == 0) {
-                integers.add(i);
-            }
-        }
-        return integers;
+    private static ArrayList<Integer> getDivisors(int num) {
+        return IntStream.rangeClosed(1, num).filter(i -> num % i == 0).boxed().collect(Collectors.toCollection(ArrayList::new));
     }
 }
