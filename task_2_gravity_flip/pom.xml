@@ -9,12 +9,18 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>task_three_switch_refactor</artifactId>
+    <artifactId>task_2_gravity_flip</artifactId>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

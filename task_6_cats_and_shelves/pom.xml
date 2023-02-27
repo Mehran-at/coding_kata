@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.kingcode</groupId>
-    <artifactId>task_six_cats_and_shelves</artifactId>
+    <artifactId>task_6_cats_and_shelves</artifactId>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
