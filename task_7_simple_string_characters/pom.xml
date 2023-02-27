@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.kingcode</groupId>
-    <artifactId>task_seven_simple_string_characters</artifactId>
+    <artifactId>task_7_simple_string_characters</artifactId>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
